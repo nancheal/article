@@ -18,7 +18,7 @@ ssh -T git@github.com
 git config --global user.name "your name"
 git config --global user.email "your_email@youremail.com"
 ```
-5.cd到要git的仓库
+5.**cd到要git的仓库**
 ```mysql
 git remote add origin git@github.com:yourName/yourRepo.git
 git init
@@ -28,8 +28,14 @@ git commit -m '初始化项目版本'
 git push origin
 ```
 **error情况**
-出现有本地仓库和远程仓库commit不一的情况，慎用
+1.出现有本地仓库和远程仓库commit不一的情况，慎用
 ```mysql
 git reset origin/master
 ```
 这样会把本地仓库恢复成和远程一样的情况，可能会删除本地文件，坑啊,最好是本地先备份下
+2.在删除之前的commit的时候我用了网上的下面的代码
+```mysql
+git reset --hard <commit_id>
+git push origin HEAD --force
+```
+也是一个会影响本地仓库的代码，慎用
