@@ -194,7 +194,7 @@
     ERROR 1062 (23000): Duplicate entry '5.7.17+1' for key '<group_key>'
     ```
     
-    可以发现，我们有一定的<font color=Crimson>几率</font>爆出错来，其实有一定的条件-users的记录数需要 ≥ 2（ rand()生成无序序列 ）或者 ≤ 3（ rand(0)生成序列的 ）。为什么会像上面这样呢？其实在这条语句里concat(…) 做为a并成为group by的规则，那么group by的规则就只有：'5.7.17+0'和'5.7.17+1'，ok规则知道了，那么count是计算过程是怎么样的呢，这里看着上面没保存的结果，think in this way：
+    可以发现，我们有一定的<font color=Crimson>几率</font>爆出错来，其实有一定的条件-users的记录数需要 ≥ 2（ rand()生成无序序列 ）或者 ≥ 3（ rand(0)生成序列的 ）。为什么会像上面这样呢？其实在这条语句里concat(…) 做为a并成为group by的规则，那么group by的规则就只有：'5.7.17+0'和'5.7.17+1'，ok规则知道了，那么count是计算过程是怎么样的呢，这里看着上面没保存的结果，think in this way：
     
      #####	取第一条记录时concat的结果为'5.7.17+0' ——> 发现a没有此键值 ——> 向a中添加此记录时会重新计算concat一次的结果为'5.7.17+0'，并把conut(*)自加1
      
