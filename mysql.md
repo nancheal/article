@@ -106,3 +106,4 @@ var_dump($data);
 ?>
 ```
 参考:[https://www.leavesongs.com/PENETRATION/mysql-charset-trick.html](https://www.leavesongs.com/PENETRATION/mysql-charset-trick.html)
+mark一下：这里的postman和brupsuit在处理post数据包时，是有区别的
