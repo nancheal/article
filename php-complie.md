@@ -32,3 +32,4 @@ make
 ```shell
 ./sapi/cli/php -v
 ```
+其实对于ctag这类工具亦是如此
