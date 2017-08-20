@@ -21,6 +21,7 @@ git config --global user.email "your_email@youremail.com"
 5.**cd到要git的仓库**
 ```shell
 git remote add origin git@github.com:yourName/yourRepo.git
+git remote -v 查看版本
 git init
 git add *.c
 #git mv *.c file/ git 移动文件操作
