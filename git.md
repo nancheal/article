@@ -21,9 +21,11 @@ git config --global user.email "your_email@youremail.com"
 5.**cd到要git的仓库**
 ```shell
 git remote add origin git@github.com:yourName/yourRepo.git
+git remote rename a b 仓库改名操作
 git remote -v 查看版本
 git init
 git add *.c
+git rm README #git 删除操作
 #git mv *.c file/ git 移动文件操作
 git add README
 git commit -m '初始化项目版本'
